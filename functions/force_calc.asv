@@ -1,4 +1,6 @@
-function [F_el,F_int] = force_calc(K_glob, K_gl, index, T, disp, ne)
+function [outputArg1,outputArg2] = untitled(fi, F_ext, K_glob, k )
+
+F_red = F_ext(fi);
 
 %calculating the nodal forces
 F = K_glob*disp';  

@@ -1,4 +1,4 @@
-function [K_glob, K_gl, K_red,k, index] = elem_stifness(ne, elements, T, Ndof,L, fi, index)
+function [K_glob, K_gl, K_red, index] = elem_stifness(ne, elements, T, Ndof,L, fi, index)
 E = elements(:,4);
 A = elements(:,3);
 con = elements(:,1:2);
