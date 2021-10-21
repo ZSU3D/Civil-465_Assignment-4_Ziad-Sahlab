@@ -1,6 +1,10 @@
 %This code is intended to perform a 2D truss analysis on the inputed truss elements
 %Authors: Johnny Syriani; Ziad Sahlab
 close all; clear all; clc
+
+%%
+addpath('./functions/');
+addpath('./data/');
 %%
 %data input
 ncor = load('node_coordinates.txt');
