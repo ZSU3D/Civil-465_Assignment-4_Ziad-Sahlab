@@ -1,3 +1,4 @@
+
 function [disp] = disp_calc(fi, Ndof, K_red, F_ext)
 
 F_red = F_ext(fi);

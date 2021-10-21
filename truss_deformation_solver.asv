@@ -1,7 +1,9 @@
-%This code is used to solve the deformations and internal forces in a
-
-
-%Authors: Johnny Syriani; Ziad Sahlab
+%This code is used to solve the deformations and internal forces in a 
+%simply supported 
+%Author: Ziad Sahlab
+%Acknolodgment: This code has been adapted and modified from the code used
+%tosolve assignment 1 of the course Non-linear analysis of structures. The
+%original code was written by  Johnny Syriani and Ziad 
 close all; clear all; clc
 %%
 addpath('./functions/');
@@ -20,3 +22,4 @@ sup=[1 8]; %nodes where supports are located
 [disp] = disp_calc(fi, Ndof, K_red, F_ext);
 [F_el,F_int] = force_calc(K_glob, K_gl, index, T, disp, ne);
 plotting(disp, ne, nn, ncor, elements);
+
