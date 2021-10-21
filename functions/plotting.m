@@ -1,4 +1,4 @@
-function [plot_1,plot_2] = plotting(disp, ne, nn, ncor, elements)
+function plotting(disp, ne, nn, ncor, elements)
 
 con = elements(:,1:2);
 q = 100;
@@ -25,9 +25,9 @@ end
 
 %plotting the deformed shape
 k = 1:nn;
-plot_1 = gplot(nodecon(k,k),ncor, ':.k');
+gplot(nodecon(k,k),ncor, ':.k');
 hold on
-plot_2 = gplot(nodecon(k,k),defcor, 'r');
+gplot(nodecon(k,k),defcor, 'r');
 legend('Initial shape','Deformed shape')
 hold off
 end
