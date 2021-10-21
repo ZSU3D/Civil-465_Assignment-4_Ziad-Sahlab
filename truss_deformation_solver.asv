@@ -4,7 +4,7 @@ close all; clear all; clc
 
 %%
 addpath('./functions/');
-addpath('./data/bridge_1/');
+addpath('./data/bridge_2/');
 %%
 %data input
 ncor = load('node_coordinates.txt');
@@ -20,7 +20,11 @@ sup=[1 7]; %nodes where supports are located
 [fi, sup_index, index] = node_dof(Ndof,sup, con, ne);
 [K_glob, K_gl, K_red,k] = elem_stifness(ne, elements, T, Ndof, L, fi, index);
 
-F_ext = load('applied_loads.txt');  %force vector initialization
+F_ext = zeros(Ndof,1);  %force vector initialization
+%Input forces at DoF indices[kN]
+F_ext(3) = -150;
+F_ext(5) = -150; 
+F_ext() = -150;
 
 q = 100; %scale of deformed shape plot
 

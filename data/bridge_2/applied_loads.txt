@@ -1,0 +1,19 @@
+%forces applied on the degrees of freedom on each node in kN
+0
+0
+0
+-150
+0
+0
+0
+0
+0
+-200
+0
+0
+0
+0
+0
+0
+0
+-150
