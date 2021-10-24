@@ -1,3 +1,4 @@
+%This function is used to calculate the nodal and internal memeber forces
 function [F_el,F_int] = force_calc(K_glob, K_gl, index, T, disp, ne)
 
 %calculating the nodal forces
@@ -13,7 +14,7 @@ for i = 1 : ne
     for j=1:4
        F_redel(j,i) = F_el(index(i,j),i);
     end
-  F_int(:,i) = T(:,:,i)*F_redel(:,i);  
+  F_int(:,i) = T(:,:,i)*F_redel(:,i);  %the axial forces in the truss members
 end
 end
 

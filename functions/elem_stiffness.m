@@ -1,6 +1,9 @@
-function [K_glob, K_gl, K_red, index] = elem_stifness(ne, elements, T, Ndof,L, fi, index)
-E = elements(:,4);
-A = elements(:,3);
+%This function is used to calculate the element stiffness matrix and
+%assemble the global stiffness matrix
+function [K_glob, K_gl, K_red, index] = elem_stiffness(ne, elements, T, Ndof,L, fi, index)
+
+E = elements(:,4); %takes the young modulus from the input file
+A = elements(:,3); %takes the element cross-section area from the input file
 con = elements(:,1:2);
 
 %unit stiffness matrix of element in local coordinate system
@@ -10,7 +13,7 @@ K_unit=[1 0 -1 0;
         0 0 0 0];
     
 for i = 1:ne
-    k(i) = E(i)*A(i)/L(i);
+    k(i) = E(i)*A(i)/L(i); %calculates the element stiffness
 end
 
 %element stiffness in global coordinate system
@@ -34,6 +37,6 @@ for z = 1:ne
         end
     end
 end 
-K_red = K_glob(fi,fi);
+K_red = K_glob(fi,fi); %the stiffness matrix corresponding to the free nodes
 end
 
